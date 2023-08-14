@@ -25,7 +25,7 @@ enum DataScannerAccessStatusType {
 @MainActor
 final class AppViewModel: ObservableObject {
     // RESEARCH BINDING!!
-    //Property binding allows data to be read and set
+    // Property binding allows data to be read and set
     @Published var dataScannerAccessStatus: DataScannerAccessStatusType = .notDetermined
     @Published var recognizedItems: [RecognizedItem] = []
     @Published var scanType: ScanType = .text

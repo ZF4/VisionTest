@@ -9,7 +9,7 @@ import SwiftUI
 import VisionKit
 
 struct ContentView: View {
-    
+    @EnvironmentObject var dataStore: DataStore
     @EnvironmentObject var vm: AppViewModel
     @State private var showingSheet = false
     @Environment(\.dismiss) var dismiss
@@ -32,14 +32,12 @@ struct ContentView: View {
     
     private var mainView: some View {
         VStack {
-//            if (vm.isShown) {
-//                }
-                Button("Show Sheet") {
-                    showingSheet.toggle()
-                }
-                .sheet(isPresented: $showingSheet) {
-                    SheetView()
-                }
+            Button("Show Sheet") {
+                showingSheet.toggle()
+            }
+            .sheet(isPresented: $showingSheet) {
+                SheetView()
+            }
             
             VStack {
                 headerView
@@ -48,18 +46,8 @@ struct ContentView: View {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 16) {
                         ForEach(vm.recognizedItems) { item in
-                            switch item {
-                            case .barcode(let barcode):
-                                Text(barcode.payloadStringValue ?? "Unknown barcode")
-                                
-                            case .text(let text):
-                                Text(text.transcript)
-                                
-                                
-                                
-                            @unknown default:
-                                Text("Something wrong fam")
-                            }
+                            let data =  TransientItem(item: item).toStoredItem()
+                            Text("\(data.string!)")
                         }
                     }
                     .padding(.horizontal)
@@ -75,20 +63,20 @@ struct ContentView: View {
         }
         .padding(.horizontal)
     }
-    
 }
 
 struct SheetView: View {
+    @EnvironmentObject var dataStore: DataStore
+    @EnvironmentObject var transItem: TransientItem
     @EnvironmentObject var vm: AppViewModel
+    //    @EnvironmentObject var storedItem: StoredItem
     @Environment(\.dismiss) var dismiss
-
+    
     var body: some View {
         VStack {
-                DataScannerView(isShown: $vm.isShown, recognizedItems: $vm.recognizedItems,
-                                recongizedDataType: vm.recognizedDataType,
-                                recognizesMultipleItems: vm.recognizesMultipleItems)
-                .ignoresSafeArea()
-                .id(vm.dataScannerViewId)
+            DataScannerView(isShown: $vm.isShown, recognizedItems: $vm.recognizedItems,
+                            recongizedDataType: vm.recognizedDataType,
+                            recognizesMultipleItems: vm.recognizesMultipleItems)
             
             headerView
             ScrollView {
@@ -100,8 +88,6 @@ struct SheetView: View {
                             
                         case .text(let text):
                             Text(text.transcript)
-                            
-                            
                             
                         @unknown default:
                             Text("Something wrong fam")

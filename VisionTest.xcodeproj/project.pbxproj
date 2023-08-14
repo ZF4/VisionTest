@@ -12,7 +12,9 @@
 		9F769CB12A183E1D0053AD97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F769CB02A183E1D0053AD97 /* Assets.xcassets */; };
 		9F769CB42A183E1D0053AD97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F769CB32A183E1D0053AD97 /* Preview Assets.xcassets */; };
 		9F769CBC2A18458A0053AD97 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F769CBB2A18458A0053AD97 /* AppViewModel.swift */; };
-		9F839CE12A48DAC6004F6D85 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F839CE02A48DAC6004F6D85 /* ListView.swift */; };
+		9FCFCBC22A5C69EC00D81828 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFCBC12A5C69EC00D81828 /* DataStore.swift */; };
+		9FCFCBC42A5C6A1700D81828 /* StoredItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFCBC32A5C6A1700D81828 /* StoredItem.swift */; };
+		9FCFCBC62A5C6A3200D81828 /* TransientItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFCBC52A5C6A3200D81828 /* TransientItem.swift */; };
 		9FD7D9142A30D7D00087220B /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7D9132A30D7D00087220B /* DataScannerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +26,9 @@
 		9F769CB32A183E1D0053AD97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F769CBA2A1845500053AD97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9F769CBB2A18458A0053AD97 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
-		9F839CE02A48DAC6004F6D85 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		9FCFCBC12A5C69EC00D81828 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		9FCFCBC32A5C6A1700D81828 /* StoredItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredItem.swift; sourceTree = "<group>"; };
+		9FCFCBC52A5C6A3200D81828 /* TransientItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransientItem.swift; sourceTree = "<group>"; };
 		9FD7D9132A30D7D00087220B /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,9 +65,8 @@
 				9F769CBA2A1845500053AD97 /* Info.plist */,
 				9F769CAC2A183E1B0053AD97 /* VisionTestApp.swift */,
 				9F769CAE2A183E1B0053AD97 /* ContentView.swift */,
-				9F839CE02A48DAC6004F6D85 /* ListView.swift */,
 				9FD7D9132A30D7D00087220B /* DataScannerView.swift */,
-				9F769CBB2A18458A0053AD97 /* AppViewModel.swift */,
+				9FCFCBC02A5C68BB00D81828 /* Model */,
 				9F769CB02A183E1D0053AD97 /* Assets.xcassets */,
 				9F769CB22A183E1D0053AD97 /* Preview Content */,
 			);
@@ -76,6 +79,17 @@
 				9F769CB32A183E1D0053AD97 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9FCFCBC02A5C68BB00D81828 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F769CBB2A18458A0053AD97 /* AppViewModel.swift */,
+				9FCFCBC12A5C69EC00D81828 /* DataStore.swift */,
+				9FCFCBC52A5C6A3200D81828 /* TransientItem.swift */,
+				9FCFCBC32A5C6A1700D81828 /* StoredItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F769CAF2A183E1B0053AD97 /* ContentView.swift in Sources */,
+				9FCFCBC22A5C69EC00D81828 /* DataStore.swift in Sources */,
 				9F769CAD2A183E1B0053AD97 /* VisionTestApp.swift in Sources */,
-				9F839CE12A48DAC6004F6D85 /* ListView.swift in Sources */,
+				9FCFCBC42A5C6A1700D81828 /* StoredItem.swift in Sources */,
+				9FCFCBC62A5C6A3200D81828 /* TransientItem.swift in Sources */,
 				9F769CBC2A18458A0053AD97 /* AppViewModel.swift in Sources */,
 				9FD7D9142A30D7D00087220B /* DataScannerView.swift in Sources */,
 			);
